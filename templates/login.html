@@ -1,0 +1,45 @@
+{% extends "index.html" %}
+
+{% block content %}
+<h1>Signup</h1>
+<form action="/login" method="post">
+    <table>
+    <!-- 1st field -->
+    <tr>
+        <td><label for="username">Username</label></td>
+        <td><input name="username" type="text" value="{{ username }}"></td>
+        <td>{% if error_username %}
+            <div class='error'>{{ error_username }}</div>
+            {% endif %}</td>
+    </tr>
+    <!-- 2nd field -->
+    <tr>
+        <td><label for="password">Password</label></td>
+        <td><input name="password" type="password"></td>
+        <td>{% if error_password %}
+            <div class='error'>{{ error_password }}</div>
+            {% endif %}</td>
+    </tr>
+    <!-- 3rd field -->
+    <tr>
+        <td><label for="password-verify">Verify Password</label></td>
+        <td><input name="password-verify" type="password"></td>
+        <td>{% if error_verify %}
+            <div class='error'>{{ error_verify }}</div>
+            {% endif %}</td>
+    </tr>
+    <!-- 4th field -->
+    <tr>
+        <td><label for="email">Email (optional)</label></td>
+        <td><input name="email" type="text" value="{{ email }}"></td>
+        <td>{% if error_email %}
+            <div class='error'>{{ error_email }}</div>
+            {% endif %}</td>
+    </tr>
+    <!-- submit button-->
+    <tr>
+        <td><input type="submit" value="Submit Query"></td>
+    </tr>
+    </table>
+</form>
+{% endblock %}
